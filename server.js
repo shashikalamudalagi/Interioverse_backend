@@ -35,7 +35,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
 
-// ✅ FIXED PORT (RENDER SAFE)
+//  FIXED PORT (RENDER SAFE)
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
