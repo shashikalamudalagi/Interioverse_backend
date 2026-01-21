@@ -16,15 +16,25 @@ connectDB();
 app.use(express.json());
 app.use(cookieParser());
 
+// app.use(
+//   cors({
+//     origin: [
+//       "http://localhost:3000",              // local dev
+//       "https://interioverse-admin-project.vercel.app" // Vercel frontend (replace with YOUR URL)
+//     ],
+//     credentials: true,
+//   })
+// );
 app.use(
   cors({
     origin: [
-      "http://localhost:3000",              // local dev
-      "https://interioverse-admin-project.vercel.app" // Vercel frontend (replace with YOUR URL)
+      "http://localhost:3000",
+      "https://interioverse-admin-project-o1af.vercel.app"
     ],
     credentials: true,
   })
 );
+
 
 // Health check (IMPORTANT)
 app.get("/", (req, res) => {
