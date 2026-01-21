@@ -29,11 +29,12 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://interioverse-admin-project.vercel.app/"
+      "https://interioverse-admin-project.vercel.app"
     ],
     credentials: true,
   })
 );
+
 
 
 // Health check (IMPORTANT)
