@@ -29,7 +29,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://interioverse-admin-project-o1af.vercel.app"
+      "https://interioverse-admin-project.vercel.app/"
     ],
     credentials: true,
   })

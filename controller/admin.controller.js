@@ -1,7 +1,7 @@
 const User = require("../model/user.model");
 
 exports.getAllUsers = async (req, res) => {
-  console.log("ADMIN:", req.user.email);
+ 
   const users = await User.find({ isListedInAdmin: true })
   .sort({ createdAt: -1 });
   res.json(users);
