@@ -21,9 +21,10 @@ const connectDB = async () => {
     console.log("MongoDB connected");
   } catch (err) {
     console.error("MongoDB connection error:", err.message);
-    //  DO NOT exit the process on Render
+    // Do NOT exit process on Render
   }
 };
 
 module.exports = connectDB;
+
 
