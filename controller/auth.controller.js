@@ -153,10 +153,12 @@ if (role === "user" && password === USER_PASSWORD) {
 
     // Store JWT in HTTP-only cookie
     res.cookie("token", token, {
-      httpOnly: true,         // prevents JS access
-      sameSite: "lax",
-      secure: false, // localhost
-    });
+  httpOnly: true,
+  secure: true,        // REQUIRED (HTTPS)
+  sameSite: "none",   // REQUIRED (cross-site)
+  maxAge: 24 * 60 * 60 * 1000,
+});
+
 
     // Send success response with role
     return res.json({
@@ -186,14 +188,16 @@ const getCurrentUser = async (req, res) => {
 const logout = (req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    sameSite: "lax",
-    secure: false,
+    secure: true,
+    sameSite: "none",
   });
+
   res.json({ message: "Logged out" });
 };
+
 module.exports = {
   signup,
   login,
   getCurrentUser,
   logout,
-};  
+};
